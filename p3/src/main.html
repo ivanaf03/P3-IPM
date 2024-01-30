@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana">
+    <title>MY TO DO LIST</title>
+    <script src="functions.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header role="banner" aria-level="1" style="font-family: 'Cursive'; font-size: 24px; ">
+        <h1>MY TO DO LIST</h1>
+    </header>
+    <nav role="navigation">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776; Menu</div>
+        <div class="toolbar">
+            <button onclick="markAllTasks()" aria-pressed="false" aria-label="Mark all tasks">Mark all tasks</button>
+            <button onclick="unmarkAllTasks()" aria-pressed="false" aria-label="Unmark all tasks">Unmark all tasks</button>
+            <button onclick="deleteAllTasks()" aria-pressed="false" aria-label="Remove all tasks">Remove all tasks</button>
+            <button onclick="sortTasksByDate()" aria-pressed="false" aria-label="Remove all tasks">Sort by date</button>
+            <button onclick="sortCompletedFirst()" aria-pressed="false" aria-label="Sort by date">Completed first</button>
+            <button onclick="sortUncompletedFirst()" aria-pressed="false" aria-label="Sort completed first">Uncompleted first</button>
+            <button onclick="deleteOldTasks()" aria-pressed="false" aria-label="Remove old tasks">Remove old tasks</button>
+        </div>
+    </nav>
+    <section class="task-container">
+        <div class="task-section">
+            <div class="add-task">
+                <input type="text" placeholder="New task (title)" id="newTaskInput">
+                <input type="date" id="taskDate">
+                <div class="buttons">
+                    <button onclick="addTask()" aria-label="Add Task" aria-pressed="false">&#x2795;</button>
+                </div>
+            </div>
+            <div class="description-container">
+                <textarea placeholder="Description" id="descriptionInput"></textarea>
+            </div>
+        </div>
+        <div class="motivation-section"  aria-live="polite" aria-atomic="true">
+            <textarea id="motivation" readonly></textarea>
+        </div>
+    </section>
+    <section id="taskList" class="task-list" role="list">
+    </section>
+    <div id="customAlert" class="custom-alert">
+        <p id="alertMessage"></p>
+        <button onclick="closeCustomAlert()">OK</button>
+    </div>
+    <footer>
+        <p>Spain</p>
+        <p>Ivanna Pombo Casais-Iván Álvarez Fernández-Fernando Álvarez Rodríguez de Legísima</p>
+        <p>© 2023 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">CC BY-NC-SA 4.0</a></p>
+    </footer>
+</body>
+</html>
